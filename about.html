@@ -176,6 +176,18 @@
             mobileMenuBtn.classList.toggle('active');
         });
 
+        // Handle scroll for navigation color change
+        const mainNav = document.querySelector('.main-nav');
+        const heroHeight = 300; // Approximate height where we want the color to change
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        });
+
         // FAQ functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {

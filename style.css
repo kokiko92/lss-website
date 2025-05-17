@@ -1,18 +1,21 @@
 :root {
-    --primary-blue: #0066cc;
-    --secondary-blue: #003d7a;
-    --primary-pink: #ff4d8c;
-    --secondary-pink: #ff1a6b;
+    --primary-blue: #4FB0FF;
+    --secondary-blue: #2D9CFF;
+    --footer-blue: #1E88E5;
+    --primary-pink: #FF6B9C;
+    --secondary-pink: #FF4D8C;
     --light-gray: #f8f9fa;
-    --dark-gray: #333;
+    --dark-gray: #505050;
     --white: #fff;
 
     /* New variables for enhanced design */
     --gradient-sport: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius-lg: 25px;
+    --border-radius-md: 15px;
 }
 
 /* Modern CSS Reset */
@@ -29,15 +32,16 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
+    line-height: 1.8;
     color: var(--dark-gray);
     overflow-x: hidden;
+    background-color: #fafafa;
 }
 
 /* Enhanced Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 102, 204, 0.8), rgba(255, 77, 140, 0.8));
-    min-height: 100vh;
+    background: var(--primary-pink);
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +51,7 @@ body {
     padding: 2rem;
     position: relative;
     overflow: hidden;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 }
 
 .hero::before {
@@ -79,18 +84,20 @@ body {
 
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 .hero p {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     max-width: 800px;
     margin: 0 auto;
+    line-height: 1.6;
 }
+
 /* Improved Sections */
 section {
     padding: clamp(3rem, 8vw, 6rem) 2rem;
@@ -106,8 +113,12 @@ section {
 
 /* Enhanced About Section */
 .about {
-    background-color: var(--light-gray);
+    background-color: var(--white);
     position: relative;
+    border-radius: var(--border-radius-md);
+    margin: 2rem auto;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
 }
 
 .about .container {
@@ -138,7 +149,7 @@ h2::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 60px;
     height: 4px;
     background: var(--gradient-sport);
     border-radius: 2px;
@@ -158,8 +169,7 @@ h2::after {
 
 .event-card {
     background: var(--white);
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius-md);
     padding: 2rem;
     transition: var(--transition-base);
     border: 2px solid transparent;
@@ -168,6 +178,7 @@ h2::after {
     gap: 1rem;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
 .event-card::before {
@@ -189,13 +200,14 @@ h2::after {
 .event-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-blue);
 }
 
 .event-card h3 {
     color: var(--primary-blue);
-    margin-bottom: 0.5rem;
     font-size: 1.4rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .event-card p {
@@ -205,9 +217,11 @@ h2::after {
 
 /* Enhanced Footer */
 footer {
-    background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+    background: var(--footer-blue);
     color: var(--white);
-    padding: clamp(3rem, 6vw, 5rem) 2rem;
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    margin-top: 4rem;
     text-align: center;
     position: relative;
 }
@@ -296,7 +310,7 @@ footer {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: var(--gradient-sport);
+    background: rgba(255, 255, 255, 0.2);
     color: var(--white);
     font-size: 1.5rem;
     text-decoration: none;
@@ -324,8 +338,8 @@ footer {
 }
 
 .social-link:hover {
-    transform: translateY(-3px) rotate(8deg);
-    box-shadow: var(--shadow-lg);
+    background: var(--white);
+    transform: translateY(-3px) rotate(8deg) scale(1.1);
 }
 
 .social-link:hover i {
@@ -414,10 +428,9 @@ footer {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
     z-index: 1000;
     padding: 1rem 0;
+    transition: var(--transition-base);
 }
 
 .nav-container {
@@ -437,6 +450,7 @@ footer {
 .nav-logo-img {
     height: 50px;
     width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .nav-links {
@@ -446,26 +460,39 @@ footer {
 }
 
 .nav-link {
-    color: var(--dark-gray);
+    color: var(--white);
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition-base);
-}
-
-.nav-link:hover {
-    color: var(--primary-blue);
-}
-
-.nav-btn {
-    background: var(--gradient-sport);
-    color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 50px;
 }
 
-.nav-btn:hover {
-    color: var(--white);
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+}
+
+.main-nav.scrolled .nav-link {
+    color: var(--primary-blue);
+}
+
+.main-nav.scrolled .nav-link:hover {
+    background: rgba(79, 176, 255, 0.1);
+}
+
+.nav-btn {
+    background: var(--white);
+    color: var(--primary-blue);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px) scale(1.05);
     box-shadow: var(--shadow-md);
 }
 
@@ -483,21 +510,24 @@ footer {
     display: block;
     width: 25px;
     height: 2px;
-    background: var(--dark-gray);
+    background: var(--white);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     transition: var(--transition-base);
 }
 
 /* Page Header */
 .page-header {
-    background: var(--gradient-sport);
+    background: var(--primary-pink);
     color: var(--white);
     padding: 8rem 2rem 4rem;
     text-align: center;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 }
 
 .page-header h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .page-header p {
@@ -531,10 +561,10 @@ footer {
 
 .mission-card {
     background: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem 2rem;
     text-align: center;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition-base);
 }
 
@@ -547,6 +577,12 @@ footer {
     font-size: 2.5rem;
     color: var(--primary-blue);
     margin-bottom: 1.5rem;
+    transition: var(--transition-base);
+}
+
+.mission-card:hover i {
+    transform: scale(1.2);
+    color: var(--primary-pink);
 }
 
 .mission-card h3 {
@@ -738,16 +774,16 @@ footer {
     }
 
     .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--white);
+        position: fixed;
+        top: 80px;
+        left: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.9);
         flex-direction: column;
         padding: 1rem;
         gap: 1rem;
-        box-shadow: var(--shadow-md);
-        transform: translateY(-100%);
+        border-radius: 15px;
+        transform: translateY(-200%);
         opacity: 0;
         pointer-events: none;
         transition: var(--transition-base);
@@ -803,7 +839,7 @@ footer {
 
 .faq-item {
     background: var(--white);
-    border-radius: 10px;
+    border-radius: var(--border-radius-md);
     margin-bottom: 1rem;
     box-shadow: var(--shadow-sm);
     overflow: hidden;
@@ -813,36 +849,42 @@ footer {
 .faq-question {
     padding: 1.5rem;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-weight: 600;
     color: var(--primary-blue);
-    transition: var(--transition-base);
+    border-radius: var(--border-radius-md);
 }
 
 .faq-question:hover {
-    background-color: rgba(0, 102, 204, 0.05);
-}
-
-.faq-question::after {
-    content: '+';
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-question::after {
-    transform: rotate(45deg);
+    background: rgba(79, 176, 255, 0.1);
 }
 
 .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
     padding: 0 1.5rem;
+    line-height: 1.8;
 }
 
-.faq-item.active .faq-answer {
-    max-height: 300px;
-    padding: 0 1.5rem 1.5rem;
+/* Footer button style */
+footer .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: var(--primary-pink);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition-base);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+footer .btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+    background: var(--secondary-pink);
 }

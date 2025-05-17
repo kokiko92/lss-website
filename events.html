@@ -43,25 +43,18 @@
             <h2>Entraînements Réguliers</h2>
             <div class="training-grid">
                 <div class="training-card">
-                    <div class="training-day">Mardi</div>
-                    <h3>Course à Pied</h3>
-                    <p><i class="far fa-clock"></i> 19h00 - 20h30</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Parc du Mont-Valérien</p>
-                    <p class="training-details">Session de course à pied adaptée à tous les niveaux. Exercices techniques et renforcement.</p>
-                </div>
-                <div class="training-card">
                     <div class="training-day">Jeudi</div>
                     <h3>Natation</h3>
-                    <p><i class="far fa-clock"></i> 20h00 - 21h30</p>
+                    <p><i class="far fa-clock"></i> 18h30 - 19h45</p>
                     <p><i class="fas fa-map-marker-alt"></i> Piscine des Raguidelles</p>
                     <p class="training-details">Perfectionnement technique en natation et exercices spécifiques swimrun.</p>
                 </div>
                 <div class="training-card">
-                    <div class="training-day">Samedi</div>
-                    <h3>Swimrun</h3>
-                    <p><i class="far fa-clock"></i> 09h00 - 11h00</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Bords de Seine</p>
-                    <p class="training-details">Session complète de swimrun avec alternance natation en eau libre et course à pied.</p>
+                    <div class="training-day">Week-end</div>
+                    <h3>Course à Pied</h3>
+                    <p><i class="far fa-clock"></i> Horaires à définir</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Suresnes</p>
+                    <p class="training-details">Session de course à pied le samedi ou dimanche matin, adaptée à tous les niveaux.</p>
                 </div>
             </div>
         </div>
@@ -159,6 +152,18 @@
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Handle scroll for navigation color change
+        const mainNav = document.querySelector('.main-nav');
+        const heroHeight = 300; // Approximate height where we want the color to change
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
