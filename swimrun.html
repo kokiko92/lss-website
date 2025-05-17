@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu'est-ce que le Swimrun ? - Les Loutres du Swimrun Suresnois (LSS)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .swimrun-section {
+            padding: 8rem 0 4rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .illustration {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+            transition: var(--transition-base);
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            background: rgba(0, 102, 204, 0.1);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-sport);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .key-point {
+            background: var(--gradient-sport);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .key-point h2 {
+            color: var(--white);
+        }
+
+        .key-point h2::after {
+            background: var(--white);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .equipment-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .equipment-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .info-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo_LSS.png" alt="LSS Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="events.html" class="nav-link">Événements</a>
+                <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Swimrun Section -->
+    <section class="swimrun-section">
+        <div class="container">
+            <h1>Qu'est-ce que le Swimrun ?</h1>
+            <p class="subtitle">Découvrez ce sport unique qui allie natation et course à pied</p>
+
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&q=80" alt="Swimrun en action" class="illustration">
+                <p>Le swimrun est un sport d'endurance né en Suède qui combine la natation en eau libre et la course à pied. Contrairement au triathlon, les transitions sont multiples et vous gardez votre équipement pendant toute l'épreuve. C'est une aventure unique qui vous fait découvrir des paysages magnifiques tout en relevant un défi sportif stimulant.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h2>Les Particularités</h2>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Alternance</strong>
+                                <p>Plusieurs sections de natation et course à pied</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <strong>Binôme</strong>
+                                <p>Course en équipe de deux pour plus de sécurité</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div>
+                                <strong>Nature</strong>
+                                <p>Parcours en pleine nature et eau libre</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2>Les Avantages</h2>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <strong>Complet</strong>
+                                <p>Développe l'endurance et la polyvalence</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div>
+                                <strong>Convivial</strong>
+                                <p>Esprit d'entraide et de partage</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div>
+                                <strong>Écologique</strong>
+                                <p>Sport en harmonie avec la nature</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h2>Le Saviez-vous ?</h2>
+                <p>Le swimrun est né en Suède avec l'ÖTILLÖ (île à île en suédois), un défi entre amis qui consistait à traverser l'archipel de Stockholm en courant et en nageant. Aujourd'hui, c'est devenu un sport pratiqué dans le monde entier !</p>
+            </div>
+
+            <h2>L'Équipement Essentiel</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Combinaison</h3>
+                    <p>Combinaison néoprène adaptée au swimrun pour la flottabilité et la chaleur</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <h3>Chaussures</h3>
+                    <p>Chaussures de trail légères et drainantes</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-glasses"></i>
+                    </div>
+                    <h3>Accessoires</h3>
+                    <p>Lunettes de natation, pull-buoy, plaquettes</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Prêt à Tenter l'Aventure ?</h2>
+                <p>Rejoignez les Loutres du Swimrun Suresnois pour découvrir ce sport passionnant dans une ambiance conviviale !</p>
+                <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="btn" target="_blank">
+                    Devenir Membre
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

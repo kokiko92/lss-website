@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Êtes-vous une vraie loutre ? - LSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-section {
+            padding: 8rem 0 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quiz-progress {
+            width: 100%;
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .quiz-progress-bar {
+            height: 100%;
+            background: var(--gradient-sport);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        .question-container {
+            display: none;
+        }
+
+        .question-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .question {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .option {
+            padding: 1rem;
+            background: var(--light-gray);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .option:hover {
+            background: rgba(0, 102, 204, 0.1);
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .result-container {
+            display: none;
+            text-align: center;
+        }
+
+        .result-container.active {
+            display: block;
+            animation: scaleIn 0.5s ease;
+        }
+
+        .result-title {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .result-description {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .result-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            object-fit: cover;
+        }
+
+        .share-result {
+            margin-top: 2rem;
+        }
+
+        .restart-btn {
+            margin-top: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo_LSS.png" alt="LSS Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="events.html" class="nav-link">Événements</a>
+                <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <div class="container">
+            <h1>Êtes-vous une vraie loutre ?</h1>
+            <p class="subtitle">Découvrez votre niveau de "loutritude" en 5 questions !</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar"></div>
+                </div>
+
+                <div class="question-container active" data-question="1">
+                    <div class="question">Quelle est votre réaction face à l'eau froide ?</div>
+                    <div class="options">
+                        <div class="option" data-points="3">Je plonge sans hésiter, c'est revigorant !</div>
+                        <div class="option" data-points="2">J'y vais progressivement, mais j'aime ça</div>
+                        <div class="option" data-points="1">Je préfère attendre que l'eau se réchauffe</div>
+                        <div class="option" data-points="0">Je reste sur la plage, merci bien</div>
+                    </div>
+                </div>
+
+                <div class="question-container" data-question="2">
+                    <div class="question">Comment gérez-vous les transitions natation/course à pied ?</div>
+                    <div class="options">
+                        <div class="option" data-points="3">Je les enchaîne naturellement, c'est ma force</div>
+                        <div class="option" data-points="2">Je m'améliore à chaque entraînement</div>
+                        <div class="option" data-points="1">Je prends mon temps pour m'adapter</div>
+                        <div class="option" data-points="0">Je préfère faire un seul sport à la fois</div>
+                    </div>
+                </div>
+
+                <div class="question-container" data-question="3">
+                    <div class="question">Quel est votre rapport à l'esprit d'équipe ?</div>
+                    <div class="options">
+                        <div class="option" data-points="3">J'adore encourager et être encouragé(e)</div>
+                        <div class="option" data-points="2">J'apprécie l'entraide pendant l'effort</div>
+                        <div class="option" data-points="1">Je préfère me concentrer sur ma performance</div>
+                        <div class="option" data-points="0">Je suis un loup solitaire</div>
+                    </div>
+                </div>
+
+                <div class="question-container" data-question="4">
+                    <div class="question">Comment occupez-vous vos week-ends ?</div>
+                    <div class="options">
+                        <div class="option" data-points="3">En enchaînant les activités sportives outdoor</div>
+                        <div class="option" data-points="2">En alternant sport et repos</div>
+                        <div class="option" data-points="1">En faisant du sport de temps en temps</div>
+                        <div class="option" data-points="0">En privilégiant les activités calmes</div>
+                    </div>
+                </div>
+
+                <div class="question-container" data-question="5">
+                    <div class="question">Quelle est votre vision du défi ?</div>
+                    <div class="options">
+                        <div class="option" data-points="3">Plus c'est difficile, plus j'aime ça !</div>
+                        <div class="option" data-points="2">J'aime me fixer des objectifs progressifs</div>
+                        <div class="option" data-points="1">Je préfère rester dans ma zone de confort</div>
+                        <div class="option" data-points="0">Je préfère éviter les situations challenging</div>
+                    </div>
+                </div>
+
+                <div class="result-container">
+                    <h2 class="result-title"></h2>
+                    <img class="result-image" src="" alt="Résultat du quiz">
+                    <p class="result-description"></p>
+                    <div class="share-result">
+                        <p>Partagez votre résultat :</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link share-facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-link share-twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="btn restart-btn">Recommencer le quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Quiz functionality
+        const questions = document.querySelectorAll('.question-container');
+        const progressBar = document.querySelector('.quiz-progress-bar');
+        const resultContainer = document.querySelector('.result-container');
+        let currentQuestion = 0;
+        let score = 0;
+
+        // Results configuration
+        const results = [
+            {
+                minScore: 12,
+                title: "Loutre Élite ! 🏆",
+                image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&q=80",
+                description: "Vous êtes une vraie loutre ! Le swimrun coule dans vos veines. Votre passion pour le sport et votre esprit d'équipe font de vous un membre exemplaire de la communauté LSS."
+            },
+            {
+                minScore: 8,
+                title: "Loutre en Devenir 🌟",
+                image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80",
+                description: "Vous avez l'âme d'une loutre ! Avec votre motivation et votre progression constante, vous êtes sur la bonne voie pour devenir un véritable membre de la famille LSS."
+            },
+            {
+                minScore: 4,
+                title: "Loutre Curieuse 🌊",
+                image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80",
+                description: "Votre curiosité pour le swimrun est prometteuse ! Avec un peu d'entraînement et l'esprit LSS, vous découvrirez tous les plaisirs de ce sport unique."
+            },
+            {
+                minScore: 0,
+                title: "Loutre en Herbe 🌱",
+                image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80",
+                description: "Le swimrun vous intrigue ? C'est un excellent début ! Rejoignez-nous pour une séance d'essai et laissez-vous séduire par l'esprit LSS."
+            }
+        ];
+
+        // Initialize quiz
+        function initQuiz() {
+            questions.forEach(question => {
+                const options = question.querySelectorAll('.option');
+                options.forEach(option => {
+                    option.addEventListener('click', () => selectOption(option, options));
+                });
+            });
+        }
+
+        // Handle option selection
+        function selectOption(selectedOption, options) {
+            options.forEach(option => option.classList.remove('selected'));
+            selectedOption.classList.add('selected');
+            
+            setTimeout(() => {
+                score += parseInt(selectedOption.dataset.points);
+                currentQuestion++;
+                updateProgress();
+                
+                if (currentQuestion < questions.length) {
+                    showQuestion(currentQuestion);
+                } else {
+                    showResult();
+                }
+            }, 500);
+        }
+
+        // Show specific question
+        function showQuestion(index) {
+            questions.forEach(q => q.classList.remove('active'));
+            questions[index].classList.add('active');
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const progress = (currentQuestion / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Show quiz result
+        function showResult() {
+            questions.forEach(q => q.classList.remove('active'));
+            resultContainer.classList.add('active');
+
+            const result = results.find(r => score >= r.minScore);
+            
+            resultContainer.querySelector('.result-title').textContent = result.title;
+            resultContainer.querySelector('.result-image').src = result.image;
+            resultContainer.querySelector('.result-description').textContent = result.description;
+
+            // Configure share buttons
+            const shareText = `J'ai obtenu "${result.title}" au quiz LSS ! Découvrez votre niveau de loutritude sur`;
+            const shareUrl = encodeURIComponent(window.location.href);
+            
+            document.querySelector('.share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${encodeURIComponent(shareText)}`;
+            document.querySelector('.share-twitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${shareUrl}`;
+        }
+
+        // Restart quiz
+        document.querySelector('.restart-btn').addEventListener('click', () => {
+            currentQuestion = 0;
+            score = 0;
+            updateProgress();
+            resultContainer.classList.remove('active');
+            questions.forEach(q => q.classList.remove('active'));
+            questions[0].classList.add('active');
+            document.querySelectorAll('.option').forEach(option => option.classList.remove('selected'));
+        });
+
+        // Initialize quiz on load
+        initQuiz();
+    </script>
+</body>
+</html> 

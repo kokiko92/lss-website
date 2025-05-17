@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Loutres du Swimrun Suresnois (LSS)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo_LSS.png" alt="LSS Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="events.html" class="nav-link">Événements</a>
+                <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="logo_LSS.png" alt="LSS Logo">
+        <h1>Les Loutres du Swimrun Suresnois</h1>
+        <p>Nager, courir, s'amuser – ensemble !</p>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>À propos de nous</h2>
+            <p>Les Loutres du Swimrun Suresnois (LSS) est une association dynamique dédiée à la pratique du swimrun dans une ambiance conviviale et inclusive. Notre mission est de rassembler les passionnés de sport, débutants comme confirmés, autour d'une discipline alliant natation et course à pied dans un esprit d'entraide et de partage.</p>
+        </div>
+    </section>
+
+    <section class="events">
+        <div class="container">
+            <h2>Nos Événements et Entraînements</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <h3>Entraînements Hebdomadaires</h3>
+                    <p>Rejoignez-nous tous les samedis matin pour nos sessions d'entraînement au bord de Seine.</p>
+                </div>
+                <div class="event-card">
+                    <h3>Sessions Techniques</h3>
+                    <p>Perfectionnez vos transitions et votre technique de nage avec nos coachs expérimentés.</p>
+                </div>
+                <div class="event-card">
+                    <h3>Événements Spéciaux</h3>
+                    <p>Participez à nos événements mensuels et découvrez de nouveaux parcours en Île-de-France.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: contact@lss-swimrun.fr</p>
+                    <p>Suresnes, Île-de-France</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Rejoignez-nous</h3>
+                    <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="btn" target="_blank">Devenir Membre</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lss_swimrun/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61575253062888" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

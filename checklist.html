@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Équipement - Les Loutres du Swimrun Suresnois (LSS)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checklist-section {
+            padding: 8rem 0 4rem;
+        }
+
+        .checklist-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .race-category {
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: var(--transition-base);
+        }
+
+        .race-header {
+            padding: 1.5rem;
+            background: var(--gradient-sport);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .race-header:hover {
+            opacity: 0.95;
+        }
+
+        .race-header i {
+            transition: transform 0.3s ease;
+        }
+
+        .race-category.active .race-header i {
+            transform: rotate(180deg);
+        }
+
+        .race-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .race-category.active .race-content {
+            max-height: 1000px;
+        }
+
+        .gear-list {
+            padding: 1.5rem;
+        }
+
+        .gear-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .gear-category h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .gear-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: var(--transition-base);
+        }
+
+        .gear-item:hover {
+            background: var(--light-gray);
+        }
+
+        .gear-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 4px;
+            margin-right: 1rem;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-base);
+        }
+
+        .gear-checkbox:checked {
+            background: var(--primary-blue);
+        }
+
+        .gear-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .gear-label {
+            flex-grow: 1;
+            cursor: pointer;
+        }
+
+        .mandatory-tag {
+            background: var(--primary-pink);
+            color: var(--white);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        @media print {
+            .main-nav, .print-btn {
+                display: none;
+            }
+
+            .race-content {
+                max-height: none !important;
+            }
+
+            .race-category {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo_LSS.png" alt="LSS Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="events.html" class="nav-link">Événements</a>
+                <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Checklist Section -->
+    <section class="checklist-section">
+        <div class="container">
+            <h1>Checklist Équipement Swimrun</h1>
+            <p class="subtitle">Préparez votre matériel selon la distance de course</p>
+
+            <div class="checklist-container">
+                <!-- Sprint Distance -->
+                <div class="race-category">
+                    <div class="race-header">
+                        <span>Sprint (5-10km) <small>Idéal pour débuter</small></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="race-content">
+                        <div class="gear-list">
+                            <div class="gear-category">
+                                <h3>Équipement Obligatoire</h3>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="sprint-wetsuit" class="gear-checkbox">
+                                    <label for="sprint-wetsuit" class="gear-label">Combinaison néoprène<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="sprint-goggles" class="gear-checkbox">
+                                    <label for="sprint-goggles" class="gear-label">Lunettes de natation<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="sprint-shoes" class="gear-checkbox">
+                                    <label for="sprint-shoes" class="gear-label">Chaussures de trail<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                            </div>
+                            <div class="gear-category">
+                                <h3>Équipement Recommandé</h3>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="sprint-pullbuoy" class="gear-checkbox">
+                                    <label for="sprint-pullbuoy" class="gear-label">Pull-buoy</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="sprint-flask" class="gear-checkbox">
+                                    <label for="sprint-flask" class="gear-label">Gourde souple</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Distance -->
+                <div class="race-category">
+                    <div class="race-header">
+                        <span>Medium (10-25km) <small>Pour les plus aguerris</small></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="race-content">
+                        <div class="gear-list">
+                            <div class="gear-category">
+                                <h3>Équipement Obligatoire</h3>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-wetsuit" class="gear-checkbox">
+                                    <label for="medium-wetsuit" class="gear-label">Combinaison néoprène<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-goggles" class="gear-checkbox">
+                                    <label for="medium-goggles" class="gear-label">Lunettes de natation<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-shoes" class="gear-checkbox">
+                                    <label for="medium-shoes" class="gear-label">Chaussures de trail<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-whistle" class="gear-checkbox">
+                                    <label for="medium-whistle" class="gear-label">Sifflet<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                            </div>
+                            <div class="gear-category">
+                                <h3>Équipement Recommandé</h3>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-pullbuoy" class="gear-checkbox">
+                                    <label for="medium-pullbuoy" class="gear-label">Pull-buoy</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-paddles" class="gear-checkbox">
+                                    <label for="medium-paddles" class="gear-label">Plaquettes</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-flask" class="gear-checkbox">
+                                    <label for="medium-flask" class="gear-label">Gourde souple</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="medium-gels" class="gear-checkbox">
+                                    <label for="medium-gels" class="gear-label">Gels énergétiques</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Long Distance -->
+                <div class="race-category">
+                    <div class="race-header">
+                        <span>Long (25km+) <small>Pour les experts</small></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="race-content">
+                        <div class="gear-list">
+                            <div class="gear-category">
+                                <h3>Équipement Obligatoire</h3>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-wetsuit" class="gear-checkbox">
+                                    <label for="long-wetsuit" class="gear-label">Combinaison néoprène<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-goggles" class="gear-checkbox">
+                                    <label for="long-goggles" class="gear-label">Lunettes de natation<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-shoes" class="gear-checkbox">
+                                    <label for="long-shoes" class="gear-label">Chaussures de trail<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-whistle" class="gear-checkbox">
+                                    <label for="long-whistle" class="gear-label">Sifflet<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-cup" class="gear-checkbox">
+                                    <label for="long-cup" class="gear-label">Gobelet réutilisable<span class="mandatory-tag">Obligatoire</span></label>
+                                </div>
+                            </div>
+                            <div class="gear-category">
+                                <h3>Équipement Recommandé</h3>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-pullbuoy" class="gear-checkbox">
+                                    <label for="long-pullbuoy" class="gear-label">Pull-buoy</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-paddles" class="gear-checkbox">
+                                    <label for="long-paddles" class="gear-label">Plaquettes</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-flask" class="gear-checkbox">
+                                    <label for="long-flask" class="gear-label">Gourde souple</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-gels" class="gear-checkbox">
+                                    <label for="long-gels" class="gear-label">Gels énergétiques</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-calf-guards" class="gear-checkbox">
+                                    <label for="long-calf-guards" class="gear-label">Manchons de compression</label>
+                                </div>
+                                <div class="gear-item">
+                                    <input type="checkbox" id="long-anti-chafe" class="gear-checkbox">
+                                    <label for="long-anti-chafe" class="gear-label">Crème anti-frottements</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i>
+                    Imprimer la checklist
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Checklist functionality
+        document.querySelectorAll('.race-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const category = header.parentElement;
+                const wasActive = category.classList.contains('active');
+                
+                // Close all categories
+                document.querySelectorAll('.race-category').forEach(cat => {
+                    cat.classList.remove('active');
+                });
+                
+                // Open clicked category if it wasn't active
+                if (!wasActive) {
+                    category.classList.add('active');
+                }
+            });
+        });
+
+        // Save checkbox states to localStorage
+        document.querySelectorAll('.gear-checkbox').forEach(checkbox => {
+            const id = checkbox.id;
+            
+            // Load saved state
+            checkbox.checked = localStorage.getItem(id) === 'true';
+            
+            // Save state on change
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(id, checkbox.checked);
+            });
+        });
+    </script>
+</body>
+</html> 
