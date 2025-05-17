@@ -36,10 +36,7 @@ body {
 
 /* Enhanced Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 102, 204, 0.8), rgba(255, 77, 140, 0.8)), 
-                url('https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&q=80');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(rgba(0, 102, 204, 0.8), rgba(255, 77, 140, 0.8));
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -94,7 +91,6 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
-
 /* Improved Sections */
 section {
     padding: clamp(3rem, 8vw, 6rem) 2rem;
