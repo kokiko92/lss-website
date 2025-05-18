@@ -1031,3 +1031,223 @@ footer .btn:hover {
     }
 }
 
+/* Enhanced Mobile Responsive Styles */
+@media (max-width: 700px) {
+    /* General Layout */
+    .container {
+        padding: 0 1rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-logo-img {
+        height: 40px;
+    }
+
+    /* Header */
+    .page-header {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    /* Training Section */
+    .training-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .training-card {
+        padding: 1.5rem;
+    }
+
+    /* Events Timeline */
+    .event-item {
+        padding: 1.5rem;
+    }
+
+    .event-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Member of the Month */
+    .member-card {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .member-image {
+        min-width: 100%;
+    }
+
+    .member-info {
+        padding: 1rem 0;
+    }
+
+    .member-achievements {
+        padding: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 3rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    /* Navigation Menu */
+    .nav-links {
+        top: 70px;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1.5rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 60vh;
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    /* Mission Cards */
+    .mission-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .mission-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Founders Section Styles */
+.founders {
+    margin-top: 3rem;
+}
+
+.founders h3 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+}
+
+.founders-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.founder-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.founder-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+}
+
+.founder-card:hover .founder-img {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.founder-card h4 {
+    margin: 1rem 0 0.5rem;
+    color: var(--primary-blue);
+}
+
+.founder-card p {
+    color: var(--primary-pink);
+    font-size: 0.9rem;
+}
+
+/* Enhanced Mobile Responsive Styles */
+@media (max-width: 700px) {
+    /* Previous mobile styles remain... */
+
+    /* Founders Section Mobile Styles */
+    .founders {
+        margin-top: 2rem;
+    }
+
+    .founders-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .founder-card {
+        min-width: 100%;
+    }
+
+    .founder-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* About Section Mobile Styles */
+    .about {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
