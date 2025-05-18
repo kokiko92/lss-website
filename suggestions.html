@@ -99,7 +99,7 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Accueil</a>
                 <a href="about.html" class="nav-link">À propos</a>
-                <a href="events.html" class="nav-link">Événements</a>
+                <a href="events.html" class="nav-link">Vie du club</a>
                 <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -111,11 +111,15 @@
     </nav>
 
     <!-- Suggestions Section -->
-    <section class="suggestions-section">
+    <header class="page-header">
         <div class="container">
             <h1>Boîte à Suggestions</h1>
-            <p class="subtitle">Votre avis compte ! Partagez vos idées, questions ou suggestions pour améliorer notre club.</p>
+            <p>Votre avis compte ! Partagez vos idées pour améliorer notre club</p>
+        </div>
+    </header>
 
+    <section class="suggestions-section">
+        <div class="container">
             <div class="form-container">
                 <div id="success-message" class="success-message">
                     Merci pour votre retour ! Nous l'examinerons avec attention.
@@ -162,6 +166,18 @@
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Handle scroll for navigation color change
+        const mainNav = document.querySelector('.main-nav');
+        const heroHeight = 300; // Approximate height where we want the color to change
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
         });
 
         // Form submission handling

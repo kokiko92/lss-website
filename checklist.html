@@ -159,7 +159,7 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Accueil</a>
                 <a href="about.html" class="nav-link">À propos</a>
-                <a href="events.html" class="nav-link">Événements</a>
+                <a href="events.html" class="nav-link">Vie du club</a>
                 <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -171,11 +171,15 @@
     </nav>
 
     <!-- Checklist Section -->
-    <section class="checklist-section">
+    <header class="page-header">
         <div class="container">
             <h1>Checklist Équipement Swimrun</h1>
-            <p class="subtitle">Préparez votre matériel selon la distance de course</p>
+            <p>Préparez votre matériel selon la distance de course</p>
+        </div>
+    </header>
 
+    <section class="checklist-section">
+        <div class="container">
             <div class="checklist-container">
                 <!-- Sprint Distance -->
                 <div class="race-category">
@@ -343,6 +347,18 @@
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Handle scroll for navigation color change
+        const mainNav = document.querySelector('.main-nav');
+        const heroHeight = 300; // Approximate height where we want the color to change
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
         });
 
         // Checklist functionality
