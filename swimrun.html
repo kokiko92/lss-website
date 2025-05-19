@@ -14,7 +14,7 @@
 
         .info-card {
             background: var(--white);
-            border-radius: 20px;
+            border-radius: var(--border-radius-md);
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: var(--shadow-md);
@@ -37,7 +37,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: var(--border-radius-md);
             margin-bottom: 1.5rem;
         }
 
@@ -52,19 +52,19 @@
             margin-bottom: 1rem;
             padding: 1rem;
             background: var(--light-gray);
-            border-radius: 10px;
+            border-radius: var(--border-radius-md);
             transition: var(--transition-base);
         }
 
         .feature-item:hover {
             transform: translateX(10px);
-            background: rgba(0, 102, 204, 0.1);
+            background: rgba(79, 176, 255, 0.1);
         }
 
         .feature-icon {
             width: 40px;
             height: 40px;
-            background: var(--gradient-sport);
+            background: var(--primary-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -75,20 +75,29 @@
         }
 
         .key-point {
-            background: var(--gradient-sport);
+            background: var(--primary-pink);
             color: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius-lg);
             margin: 3rem 0;
             text-align: center;
+            box-shadow: var(--shadow-md);
         }
 
         .key-point h2 {
             color: var(--white);
+            margin-bottom: 1.5rem;
         }
 
         .key-point h2::after {
             background: var(--white);
+        }
+
+        .key-point p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .equipment-grid {
@@ -100,8 +109,8 @@
 
         .equipment-card {
             background: var(--white);
-            padding: 1.5rem;
-            border-radius: 15px;
+            padding: 2rem;
+            border-radius: var(--border-radius-md);
             text-align: center;
             box-shadow: var(--shadow-md);
             transition: var(--transition-base);
@@ -121,6 +130,21 @@
         .cta-section {
             text-align: center;
             margin: 4rem 0;
+            padding: 3rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius-lg);
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .video-container {
@@ -144,6 +168,14 @@
         @media (max-width: 768px) {
             .info-card {
                 padding: 1.5rem;
+            }
+            
+            .key-point {
+                padding: 2rem 1.5rem;
+            }
+            
+            .key-point p {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -186,7 +218,7 @@
                 </figure>
                 <div style="flex: 1;">
                     <h2>Le Swimrun en bref</h2>
-                    <p>Le swimrun est un sport d'endurance né en Suède qui combine la natation et la course à pied. Contrairement au triathlon, les transitions sont multiples et vous gardez votre équipement pendant toute l'épreuve (et oui!, même les chaussures !).</p>
+                    <p>Le swimrun est un sport d'endurance né en Suède qui combine la natation et la course à pied. Contrairement au triathlon, les transitions sont multiples et vous gardez votre équipement pendant toute l'épreuve (et oui!, même les chaussures !). Pour en savoir plus sur l'histoire du swimrun, consultez <a href="https://swimrunfrance.fr/a-propos/histoire-de-lotillo/" target="_blank" class="info-link">l'histoire complète sur Swimrun France</a>.</p>
                 </div>
             </div>
 
@@ -209,7 +241,7 @@
                             </div>
                             <div>
                                 <strong>Binôme</strong>
-                                <p>Course en équipe de deux</p>
+                                <p>Course en équipe de deux.</p>
                             </div>
                         </li>
                         <li class="feature-item">
@@ -265,6 +297,17 @@
         </div>
     </section>
 
+    <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: loutreswimrunsuresnes@gmail.com</p>
+        <p>Suresnes, Île-de-France</p>
+        <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
+    </div>
+
+    <button class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -285,6 +328,24 @@
             } else {
                 mainNav.classList.remove('scrolled');
             }
+        });
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>

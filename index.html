@@ -32,13 +32,22 @@
     <section class="hero">
         <img src="logo_LSS.png" alt="LSS Logo">
         <h1>Les Loutres du Swimrun Suresnois</h1>
-        <p>"Je loutres donc je suis" - Une loutres anciennes</p>
+        <div class="quote-container">
+            <p class="quote">"Je loutres donc je suis" - Une loutre ancienne</p>
+            <p class="quote">"La vie est comme le swimrun, il faut savoir alterner" - Une loutre philosophe</p>
+            <p class="quote">"Plus on est de loutres, plus on rit" - Une loutre sociable</p>
+            <p class="quote">"Un esprit sain dans une loutre saine" - Une loutre sportive</p>
+            <p class="quote">"Le swimrun, c'est la liberté de choisir son élément" - Une loutre aventurière</p>
+            <p class="quote">"Seul on va vite, ensemble on va loin" - Une loutre sage</p>
+            <p class="quote">"L'important n'est pas la destination, mais les brasses qu'on donne" - Une loutre voyageuse</p>
+            <p class="quote">"Un pour tous, tous pour la loutre!" - Une loutre mousquetaire</p>
+        </div>
     </section>
 
     <section class="about">
         <div class="container">
             <h2>À propos de nous</h2>
-            <p>Les Loutres du Swimrun Suresnois est une association dédiée à la pratique du swimrun, une discipline alliant course à pied et natation en plein air(<a href="swimrun.html" class="info-link">+ d'infos sur le swimrun ici</a>). Notre but est de rassembler une communauté de swimrunners, débutants comme confirmés, à Suresnes pour s'entraîner ensemble 😊 et partager de moments convivaux.</p>            
+            <p>Les Loutres du Swimrun Suresnois est une association dédiée à la pratique du swimrun, une discipline alliant course à pied et natation en plein air(<a href="swimrun.html" class="info-link">+ d'infos sur le swimrun ici</a>). Notre but est de rassembler une communauté de swimrunners, débutants comme confirmés, à Suresnes pour s'entraîner ensemble et partager de moments convivaux 😊 .</p>            
             <div class="founders">
                 <h3>Les Fondateurs</h3>
                 <div class="founders-grid">
@@ -72,7 +81,7 @@
                     <h3>Contact</h3>
                     <p>Email: loutreswimrunsuresnes@gmail.com</p>
                     <p>Suresnes, Île-de-France</p>
-                    
+                    <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
                 </div>
                 <div class="footer-section">
                     <h3>Rejoignez-nous</h3>
@@ -92,6 +101,10 @@
             </div>
         </div>
     </footer>
+
+    <button class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Mobile menu functionality
@@ -114,6 +127,49 @@
                 mainNav.classList.remove('scrolled');
             }
         });
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Quote rotation functionality
+        const quotes = document.querySelectorAll('.quote');
+        let currentQuoteIndex = 0;
+
+        function showQuote(index) {
+            // Hide all quotes first
+            quotes.forEach(quote => {
+                quote.style.display = 'none';
+            });
+            
+            // Show only the current quote
+            quotes[index].style.display = 'block';
+        }
+
+        function rotateQuotes() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            showQuote(currentQuoteIndex);
+        }
+
+        // Initialize first quote
+        showQuote(0);
+
+        // Start rotation
+        setInterval(rotateQuotes, 8000);
     </script>
 </body>
 </html>

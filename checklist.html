@@ -339,6 +339,17 @@
         </div>
     </section>
 
+    <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: loutreswimrunsuresnes@gmail.com</p>
+        <p>Suresnes, Île-de-France</p>
+        <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
+    </div>
+
+    <button class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -359,6 +370,24 @@
             } else {
                 mainNav.classList.remove('scrolled');
             }
+        });
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Checklist functionality

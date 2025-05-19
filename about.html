@@ -95,16 +95,15 @@
         </div>
     </section>
 
- 
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>Email: contact@lss-swimrun.fr</p>
+                    <p>Email: loutreswimrunsuresnes@gmail.com</p>
                     <p>Suresnes, Île-de-France</p>
+                    <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
                 </div>
                 <div class="footer-section">
                     <h3>Rejoignez-nous</h3>
@@ -124,6 +123,10 @@
             </div>
         </div>
     </footer>
+
+    <button class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Mobile menu functionality
@@ -145,6 +148,24 @@
             } else {
                 mainNav.classList.remove('scrolled');
             }
+        });
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // FAQ functionality
