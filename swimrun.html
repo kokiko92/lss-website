@@ -189,8 +189,9 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Accueil</a>
-                <a href="about.html" class="nav-link">À propos</a>
-                <a href="events.html" class="nav-link">Vie du club</a>
+                <a href="about.html" class="nav-link">L'association</a>
+                <a href="swimrun.html" class="nav-link">Le Swimrun ?</a>
+                <a href="calendar.html" class="nav-link">Agenda</a>
                 <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -202,8 +203,8 @@
     </nav>
 
     <!-- Swimrun Section -->
-    <header class="page-header">
-        <div class="container">
+    <header class="page-header" style="background-image: url('premiere.png'); background-size: cover; background-position: center; position: relative;">
+        <div class="container" style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.5); padding: 2rem; border-radius: 10px;">
             <h1>Qu'est-ce que le Swimrun ?</h1>
             <p>Découvrez ce sport unique qui allie natation et course à pied</p>
         </div>
@@ -297,12 +298,35 @@
         </div>
     </section>
 
-    <div class="footer-section">
-        <h3>Contact</h3>
-        <p>Email: loutreswimrunsuresnes@gmail.com</p>
-        <p>Suresnes, Île-de-France</p>
-        <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: loutreswimrunsuresnes@gmail.com</p>
+                    <p>Suresnes, Île-de-France</p>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Rejoignez-nous</h3>
+                    <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="btn" target="_blank">Devenir Membre</a>
+                    <p style="margin-top: 0.5rem; font-style: italic;">C'est gratuit</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lss_swimrun/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61575253062888" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <button class="scroll-to-top" aria-label="Retour en haut">
         <i class="fas fa-arrow-up"></i>
@@ -320,7 +344,7 @@
 
         // Handle scroll for navigation color change
         const mainNav = document.querySelector('.main-nav');
-        const heroHeight = 300; // Approximate height where we want the color to change
+        const heroHeight = 300;
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > heroHeight) {

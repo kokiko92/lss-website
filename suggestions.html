@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boîte à Suggestions - Les Loutres du Swimrun Suresnois (LSS)</title>
+    <meta name="description" content="Partagez vos suggestions et questions avec les Loutres du Swimrun Suresnois (LSS)">
+    <title>Suggestions & Questions - Les Loutres du Swimrun Suresnois (LSS)</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="logo_LSS.png" as="image">
+    <link rel="preload" href="premiere.png" as="image">
     <style>
         .suggestions-section {
             padding: 8rem 0 4rem;
@@ -98,8 +101,9 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Accueil</a>
-                <a href="about.html" class="nav-link">À propos</a>
-                <a href="events.html" class="nav-link">Vie du club</a>
+                <a href="about.html" class="nav-link">L'association</a>
+                <a href="swimrun.html" class="nav-link">Le Swimrun ?</a>
+                <a href="calendar.html" class="nav-link">Agenda</a>
                 <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -111,8 +115,8 @@
     </nav>
 
     <!-- Suggestions Section -->
-    <header class="page-header">
-        <div class="container">
+    <header class="page-header" style="background-image: url('premiere.png'); background-size: cover; background-position: center; position: relative;">
+        <div class="container" style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.5); padding: 2rem; border-radius: 10px;">
             <h1>Boîte à Suggestions</h1>
             <p>Votre avis compte ! Partagez vos idées pour améliorer notre club</p>
         </div>
@@ -191,5 +195,39 @@
             .catch((error) => alert("Oops! Il y a eu un problème avec l'envoi du formulaire."));
         }
     </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: loutreswimrunsuresnes@gmail.com</p>
+                    <p>Suresnes, Île-de-France</p>
+                    <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Rejoignez-nous</h3>
+                    <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="btn" target="_blank">Devenir Membre</a>
+                    <p style="margin-top: 0.5rem; font-style: italic;">C'est gratuit</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lss_swimrun/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61575253062888" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 </html> 

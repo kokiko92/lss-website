@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Les Loutres du Swimrun Suresnois (LSS) - Association de swimrun à Suresnes">
     <title>Les Loutres du Swimrun Suresnois (LSS)</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="logo_LSS.png" as="image">
+    <link rel="preload" href="premiere.png" as="image">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,8 +20,9 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Accueil</a>
-                <a href="about.html" class="nav-link">À propos</a>
-                <a href="events.html" class="nav-link">Vie du club</a>
+                <a href="about.html" class="nav-link">L'association</a>
+                <a href="swimrun.html" class="nav-link">Le Swimrun ?</a>
+                <a href="calendar.html" class="nav-link">Agenda</a>
                 <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -29,35 +33,46 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <img src="logo_LSS.png" alt="LSS Logo">
-        <h1>Les Loutres du Swimrun Suresnois</h1>
-        <div class="quote-container">
-            <p class="quote">"Je loutre donc je suis" - Une loutre ancienne</p>
-            <p class="quote">"La vie est comme le swimrun, il faut savoir alterner" - Une loutre philosophe</p>
-            <p class="quote">"Plus on est de loutres, plus on rit" - Une loutre sociable</p>
-            <p class="quote">"Un esprit sain dans une loutre saine" - Une loutre sportive</p>
-            <p class="quote">"Le swimrun, c'est la liberté de choisir son élément" - Une loutre aventurière</p>
-            <p class="quote">"Seul on va vite, ensemble on va loin" - Une loutre sage</p>
-            <p class="quote">"L'important n'est pas la destination, mais les brasses qu'on donne" - Une loutre voyageuse</p>
-            <p class="quote">"Un pour tous, tous pour la loutre!" - Une loutre mousquetaire</p>
+    <section class="hero" style="background-image: url('premiere.png'); background-size: cover; background-position: center; position: relative;">
+        <div>
+            <img src="logo_LSS.png" alt="LSS Logo" width="150" height="150" loading="eager">
+            <h1>Les Loutres du Swimrun Suresnois</h1>
+            <div class="quote-container">
+                <p class="quote">"Je loutre donc je suis" - Une loutre ancienne</p>
+                <p class="quote">"La vie est comme le swimrun, il faut savoir alterner" - Une loutre philosophe</p>
+                <p class="quote">"Plus on est de loutres, plus on rit" - Une loutre sociable</p>
+                <p class="quote">"Un esprit sain dans une loutre saine" - Une loutre sportive</p>
+                <p class="quote">"Le swimrun, c'est la liberté de choisir son élément" - Une loutre aventurière</p>
+                <p class="quote">"Seul on va vite, ensemble on va loin" - Une loutre sage</p>
+                <p class="quote">"L'important n'est pas la destination, mais les brasses qu'on donne" - Une loutre voyageuse</p>
+                <p class="quote">"Un pour tous, tous pour la loutre!" - Une loutre mousquetaire</p>
+            </div>
         </div>
     </section>
 
     <section class="about">
         <div class="container">
             <h2>À propos de nous</h2>
-            <p>Les Loutres du Swimrun Suresnois est une association dédiée à la pratique du swimrun, une discipline alliant course à pied et natation en plein air(<a href="swimrun.html" class="info-link">+ d'infos sur le swimrun ici</a>). Notre but est de rassembler une communauté de swimrunners, débutants comme confirmés, à Suresnes pour s'entraîner ensemble et partager de moments convivaux 😊 .</p>            
+            <p>
+                Les Loutres du Swimrun Suresnois est une association gratuite dédiée à 
+                la pratique du <a href="swimrun.html" class="info-link">swimrun</a> 
+                , et principalement à la pratique du Swimrun en ville qui n'est souvent pas facile.
+            </p>
+            <p>
+                Notre but est de rassembler une communauté de swimrunners, 
+                débutants curieux comme athlètes confirmés, à Suresnes (92150) afin de s'entraîner ensemble et partager des moments conviviaux.😊
+            </p>
+
             <div class="founders">
                 <h3>Les Fondateurs</h3>
                 <div class="founders-grid">
                     <div class="founder-card">
-                        <img src="presR_L.webp" alt="Romain" class="founder-img">
+                        <img src="presR_L.webp" alt="Romain" class="founder-img" width="200" height="200" loading="lazy">
                         <h4>Romain (co-président fils) - Léon</h4>
                         <p>Le binome junior</p>
                     </div>
                     <div class="founder-card">
-                        <img src="presE_JM.webp" alt="Eric" class="founder-img">
+                        <img src="presE_JM.webp" alt="Eric" class="founder-img" width="200" height="200" loading="lazy">
                         <h4>Eric (co-président père)- Jean Marie</h4>
                         <p>Le binome senior</p>
                     </div>
@@ -68,9 +83,29 @@
 
     <section class="events">
         <div class="container">
-            <h2>Les Entraînements</h2>
-            <p>
-                Nous proposons en général 2 entraînements groupés par semaine :  1 de natation (en piscine) et 1 de course à pied (piste, côte, bois...). Il n'y a pas d'entraîneur ; l'idée est vraiment d'avoir un groupe de d'entraînement pour ne pas swimrunner seul !    </p>
+            <h2>Comment ça marche chez les Loutres ?</h2>
+            <div class="events-content">
+                <div class="event-item">
+                    <h3>Les entraînements</h3>
+                    <p>
+                        Nous avons un groupe WhatsApp et quand quelqu'un veut s'entraîner avec quelques loutres, il envoie juste l'endroit et l'heure !
+                        <br>
+                        Bien sûr, nous proposons aussi des entraînements. Sauf enpêchement de notre part (dans ce cas c'est à vous de prendre le relais 😉) il y a
+                        2 entraînements groupés par semaine : 
+                        1 de natation (en piscine) et 1 de course à pied (piste, côte, bois...).
+                        Il n'y a pas d'entraîneur ; l'idée est vraiment d'avoir un groupe 
+                        de d'entraînement pour ne pas swimrunner seul !
+                    </p>
+                </div>
+
+                <div class="event-item">
+                    <h3>Les compétitions</h3>
+                    <p>
+                        Nous proposerons aussi d'aller aux courses ensemble, en tant qu'équipe 
+                        de loutres soudés, pour les plus competiteurs d'entres nous.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -81,11 +116,12 @@
                     <h3>Contact</h3>
                     <p>Email: loutreswimrunsuresnes@gmail.com</p>
                     <p>Suresnes, Île-de-France</p>
-                    <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
                 </div>
                 <div class="footer-section">
                     <h3>Rejoignez-nous</h3>
                     <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="btn" target="_blank">Devenir Membre</a>
+                    <p style="margin-top: 0.5rem; font-style: italic;">C'est gratuit</p>
                 </div>
                 <div class="footer-section">
                     <h3>Suivez-nous</h3>

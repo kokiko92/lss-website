@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez l'histoire et la mission des Loutres du Swimrun Suresnois (LSS)">
     <title>À propos - Les Loutres du Swimrun Suresnois (LSS)</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="logo_LSS.png" as="image">
+    <link rel="preload" href="premiere.png" as="image">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,8 +20,9 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Accueil</a>
-                <a href="about.html" class="nav-link">À propos</a>
-                <a href="events.html" class="nav-link">Vie du club</a>
+                <a href="about.html" class="nav-link">L'association</a>
+                <a href="swimrun.html" class="nav-link">Le Swimrun ?</a>
+                <a href="calendar.html" class="nav-link">Agenda</a>
                 <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -30,8 +34,8 @@
     </nav>
 
     <!-- Header -->
-    <header class="page-header">
-        <div class="container">
+    <header class="page-header" style="background-image: url('premiere.png'); background-size: cover; background-position: center; position: relative;">
+        <div class="container" style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.5); padding: 2rem; border-radius: 10px;">
             <h1>À propos de LSS</h1>
             <p>Découvrez notre histoire et notre communauté</p>
         </div>
@@ -43,10 +47,43 @@
             <h2>Notre Histoire</h2>
             <div class="history-content">
                 <div class="history-text">
-                    <p>L'association des Loutres du Swimrun Suresnois (LSS) est née le 13/04/2025 suite à notre volonté de partager 
-notre passion et d'échanger avec d'autres swimrunners ! Depuis notre création, 
-                        nous essayons de mettre en place une communauté dans laquelle des sportifs de tous niveaux peuvent s'entraîner dans la convivialité</p>
-                    <p>Notre association compte aujourd'hui 7 adhérents et n'espère que grandir d'avantages.</p>
+                    <p style="margin-bottom: 2rem; line-height: 1.8;">
+                        Les Loutres du Swimrun Suresnois (LSS) sont nées le 13 avril 2025, de l'envie d'un duo père-fils de créer un groupe d'entraînement de swimrun convivial à Suresnes. Désireux de rencontrer des sportifs et partager de moments conviviaux avec eux, on a alors décidé de lancer notre association. Le nom "Loutres" s'est imposé naturellement : on aime ces animaux joueurs, sociables et drôles !                    </p>
+                    </p> 
+                    <p style="margin-bottom: 2.5rem; line-height: 1.8;">
+                        Aujourd'hui, notre petite famille de loutres s'agrandit et nous sommes ravis d'accueillir de nouveaux membres, qu'ils soient débutants ou confirmés. Nous nous entraînons ensemble, progressons ensemble, et surtout, partageons de superbes moments ensemble. 
+                        <br>Venez écrire la suite de l'histoire avec nous !
+                    </p>
+
+                    <p style="font-weight: bold; margin-top: 2rem; padding: 1.5rem; background-color: var(--white); border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+                        <i class="fas fa-users" style="color: var(--primary);"></i> Adhérents : <span class="counter" data-target="7">0</span> | 
+                        <i class="fas fa-calendar-alt" style="color: var(--primary);"></i> Création : <span class="counter" data-target="2025">0</span>
+                    </p>
+                    <script>
+                        const counters = document.querySelectorAll('.counter');
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const counter = entry.target;
+                                    const target = parseInt(counter.getAttribute('data-target'));
+                                    let count = 0;
+                                    const updateCounter = () => {
+                                        const increment = target / 50;
+                                        if (count < target) {
+                                            count += increment;
+                                            counter.innerText = Math.ceil(count);
+                                            setTimeout(updateCounter, 20);
+                                        } else {
+                                            counter.innerText = target;
+                                        }
+                                    };
+                                    updateCounter();
+                                    observer.unobserve(counter);
+                                }
+                            });
+                        });
+                        counters.forEach(counter => observer.observe(counter));
+                    </script>
                 </div>
             </div>
         </div>
@@ -56,42 +93,63 @@ notre passion et d'échanger avec d'autres swimrunners ! Depuis notre création,
     <section class="mission-section">
         <div class="container">
             <h2>Nos objectifs</h2>
-            <div class="mission-cards">
-                <div class="mission-card">
-                    <i class="fas fa-swimming-pool"></i>
-                    <h3>Promouvoir le Swimrun</h3>
-                    <p>Développer et promouvoir la pratique du swimrun dans la région de Suresnes</p>
-                </div>
-                <div class="mission-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Créer un vrai groupe local</h3>
-                    <p>Réunir des passionnés de tous niveaux dans une ambiance conviviale, solidaire et motivante pour progresser ensemble.</p>
-                </div>
-                <div class="mission-card">
-                    <i class="fas fa-medal"></i>
-                    <h3>Participer aux compétitions</h3>
-                    <p>Aller aux courses ensembles pour les plus compétiteurs, représenter les couleurs des Loutres, s'encourager, et partager des moments forts autour du swimrun.</p>
-                </div>
+            <div class="mission-intro" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                <p>Notre but est simple : faire vivre le swimrun à Suresnes et le rendre accessible à tous. Que vous soyez débutant curieux ou sportif confirmé, vous êtes les bienvenus.</p>
+            </div>
+
+            <div class="mission-goals" style="background: var(--white); padding: 2rem; border-radius: var(--border-radius-md); box-shadow: var(--shadow-md);">
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Nous voulons :</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                        <i class="fas fa-users" style="color: var(--primary); margin-right: 1rem;"></i>
+                        Créer une vraie communauté locale de swimrunners
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                        <i class="fas fa-dumbbell" style="color: var(--primary); margin-right: 1rem;"></i>
+                        Proposer des entraînements réguliers et motivants
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                        <i class="fas fa-trophy" style="color: var(--primary); margin-right: 1rem;"></i>
+                        Participer à des courses officielles ensemble dans une ambiance d'équipe
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                        <i class="fas fa-city" style="color: var(--primary); margin-right: 1rem;"></i>
+                        Montrer que le swimrun peut se pratiquer en ville
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mission-motto" style="text-align: center; margin-top: 2rem; font-style: italic; font-size: 1.2rem;">
+                <p>Chez les Loutres, pas de pression : on s'entraîne ensemble, on progresse ensemble, et on se dépasse ensemble !</p>
             </div>
         </div>
     </section>
 
-    <!-- Members Section -->
-    <section class="members-section">
+    <!-- Member of the Month Section -->
+    <section class="member-month">
         <div class="container">
-            <h2>Notre Communauté</h2>
-            <div class="members-grid">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&q=80" alt="Entraînement LSS" class="rounded-image">
-                    <p class="image-caption">Entraînement en eau libre</p>
-                </div>
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80" alt="Course LSS" class="rounded-image">
-                    <p class="image-caption">Session de course à pied</p>
-                </div>
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Équipe LSS" class="rounded-image">
-                    <p class="image-caption">L'esprit d'équipe LSS</p>
+            <h2>Membre du Mois</h2>
+            <div class="member-spotlight">
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="L_secu_civ.webp" alt="Romain et Léon" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;" loading="lazy">
+                        <figcaption style="font-style: italic;">Léon à la protection civile de Cergy</figcaption>
+                    </div>
+                    <div class="member-info">
+                        <h3>Léon</h3>
+                        <p class="member-title">Le frileux</p>
+                        <p class="member-description">
+                            Léon, premier adhérent aux LSS, fait parti du noyau de l'association. Malgré son manque de résistance à l'eau froide (comme visible sur la photo 😉), il fait une superbe course qu'il termine, en binome avec avec roro, dans le top 10 !.
+                        </p>
+                        <div class="member-achievements">
+                            <h4>Bravo Léon !</h4>
+                            <ul>
+                                <li>🏆 Premier adhérent</li>
+                                <li>💪 Top 10 Cergy</li>
+                                <li>🌟 Ambassadeurs LSS</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,11 +163,12 @@ notre passion et d'échanger avec d'autres swimrunners ! Depuis notre création,
                     <h3>Contact</h3>
                     <p>Email: loutreswimrunsuresnes@gmail.com</p>
                     <p>Suresnes, Île-de-France</p>
-                    <a href="suggestions.html" class="btn" style="margin-top: 1rem;">Suggestions & Questions</a>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
                 </div>
                 <div class="footer-section">
                     <h3>Rejoignez-nous</h3>
                     <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="btn" target="_blank">Devenir Membre</a>
+                    <p style="margin-top: 0.5rem; font-style: italic;">C'est gratuit</p>
                 </div>
                 <div class="footer-section">
                     <h3>Suivez-nous</h3>

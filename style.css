@@ -51,6 +51,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    will-change: transform;
 }
 
 .hero::before {
@@ -75,6 +76,7 @@ body {
     margin-top: 2rem;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
     transition: var(--transition-base);
+    will-change: transform;
 }
 
 .hero img:hover {
@@ -88,6 +90,8 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     font-weight: 700;
     letter-spacing: -0.5px;
+    animation: fadeInUp 1s ease-out forwards;
+    will-change: opacity, transform;
 }
 
 .hero p {
@@ -96,6 +100,8 @@ body {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+    animation: fadeInUp 1s ease-out forwards;
+    will-change: opacity, transform;
 }
 .info-link {
     color: var(--primary-pink);
@@ -184,6 +190,49 @@ h2::after {
     border-radius: 2px;
 }
 
+/* Mission Section */
+.mission-section {
+    background: var(--light-gray);
+    padding: 4rem 0;
+}
+
+.mission-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.mission-card {
+    background: var(--white);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.mission-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.mission-card p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .mission-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .mission-card {
+        padding: 1.5rem;
+    }
+}
+
 /* Improved Events Section */
 .events {
     background-color: var(--white);
@@ -208,6 +257,7 @@ h2::after {
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    will-change: transform, box-shadow;
 }
 
 .event-card::before {
@@ -300,6 +350,7 @@ footer {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    will-change: transform, background-color;
 }
 
 .btn::before {
@@ -345,6 +396,7 @@ footer {
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
+    will-change: transform, color;
 }
 
 .social-link::before {
@@ -412,11 +464,6 @@ footer {
     }
 }
 
-.hero h1,
-    .hero p {
-    animation: fadeInUp 1s ease-out forwards;
-}
-
 .event-card {
     animation: scaleIn 0.5s ease-out forwards;
 }
@@ -459,6 +506,7 @@ footer {
     z-index: 1000;
     padding: 1rem 0;
     transition: var(--transition-base);
+    will-change: transform, background-color;
 }
 
 .main-nav::after {
@@ -515,6 +563,7 @@ footer {
     transition: var(--transition-base);
     padding: 0.5rem 1rem;
     border-radius: 50px;
+    will-change: color, transform;
 }
 
 .nav-link:hover {
@@ -594,49 +643,6 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.8;
-}
-
-.mission-section {
-    background: var(--light-gray);
-    padding: 5rem 0;
-}
-
-.mission-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.mission-card {
-    background: var(--white);
-    border-radius: var(--border-radius-md);
-    padding: 2.5rem 2rem;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-base);
-}
-
-.mission-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.mission-card i {
-    font-size: 2.5rem;
-    color: var(--primary-blue);
-    margin-bottom: 1.5rem;
-    transition: var(--transition-base);
-}
-
-.mission-card:hover i {
-    transform: scale(1.2);
-    color: var(--primary-pink);
-}
-
-.mission-card h3 {
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
 }
 
 .members-section {
@@ -1312,6 +1318,41 @@ footer .btn:hover {
         right: 20px;
         width: 40px;
         height: 40px;
+    }
+}
+
+/* Performance Optimizations */
+img {
+    content-visibility: auto;
+}
+
+.hero, .founders-section, footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+}
+
+/* Print Styles */
+@media print {
+    .main-nav, .scroll-to-top, .mobile-menu-btn {
+        display: none;
+    }
+
+    body {
+        color: #000;
+    }
+
+    .hero {
+        height: auto;
+        background: none;
+    }
+
+    .hero::before {
+        display: none;
+    }
+
+    .hero h1, .hero p {
+        color: #000;
+        text-shadow: none;
     }
 }
 
