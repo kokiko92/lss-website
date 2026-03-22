@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre bonnet - LSS</title>
+    <meta name="description" content="Achetez le bonnet du club LSS. Prix: 5€.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <style>
+        .bonnet-section {
+            padding: 8rem 0 4rem;
+        }
+
+        .bonnet-card {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .bonnet-img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.25rem;
+        }
+
+        .bonnet-price {
+            margin: 0.5rem 0 1.25rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+        }
+
+        .bonnet-desc {
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .bonnet-order-card {
+            max-width: 760px;
+            margin: 2rem auto 0;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+        }
+
+        .bonnet-order-card h3 {
+            margin-bottom: 1.25rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition-base);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .required-field::after {
+            content: "*";
+            color: var(--primary-pink);
+            margin-left: 4px;
+        }
+
+        .order-note {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo_LSS.png" alt="LSS Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">L'association</a>
+                <a href="swimrun.html" class="nav-link">Le Swimrun ?</a>
+                <a href="calendar.html" class="nav-link">Agenda</a>
+                <a href="bonnet.html" class="nav-link">Notre bonnet</a>
+                <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="nav-link nav-btn" target="_blank">Devenir Membre</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background-image: url('premiere.png'); background-size: cover; background-position: center; position: relative;">
+        <div class="container" style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.5); padding: 2rem; border-radius: 10px;">
+            <h1>Notre bonnet</h1>
+            <p>Commandez ici le bonnet des Loutres</p>
+        </div>
+    </header>
+
+    <main class="bonnet-section">
+        <div class="container">
+            <div class="bonnet-card">
+                <img src="bonnet_LSS.png" alt="Bonnet du club LSS" class="bonnet-img">
+                <h2>Bonnet LSS</h2>
+                <p class="bonnet-price">Prix: 5€</p>
+                <p class="bonnet-desc">Le bonnet officiel des Loutres du Swimrun Suresnois, parfait pour l'entraînement et pour représenter fièrement le club.</p>
+            </div>
+
+            <div class="bonnet-order-card">
+                <h3>Commander le bonnet</h3>
+                <form name="commande-bonnet" action="https://formspree.io/f/meogdorp" method="POST">
+                    <div class="form-group">
+                        <label for="order-full-name" class="form-label required-field">NOM-Prénom</label>
+                        <input type="text" id="order-full-name" name="nom_prenom" class="form-input" placeholder="NOM Prénom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-address" class="form-label required-field">Adresse</label>
+                        <input type="text" id="order-address" name="adresse" class="form-input" placeholder="Votre adresse" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-quantity" class="form-label required-field">Quantité</label>
+                        <input type="number" id="order-quantity" name="quantite" class="form-input" min="1" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-phone" class="form-label required-field">Numéro de tel</label>
+                        <input type="tel" id="order-phone" name="telephone" class="form-input" placeholder="06 00 00 00 00" required>
+                    </div>
+
+                    <button type="submit" class="btn">Envoyer la commande</button>
+                    <p class="order-note">Nous vous recontactons rapidement pour confirmer la commande.</p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: loutreswimrunsuresnes@gmail.com</p>
+                    <p>Suresnes, Île-de-France</p>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Rejoignez-nous</h3>
+                    <a href="https://www.helloasso.com/associations/les-loutres-du-swimrun-suresnois-lss/adhesions/adhesion-lss" class="btn" target="_blank">Devenir Membre</a>
+                    <p style="margin-top: 0.5rem; font-style: italic;">C'est gratuit</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lss_swimrun/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61575253062888" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        const nav = document.querySelector('.main-nav');
+        const onScroll = () => {
+            if (window.scrollY > 300) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+    </script>
+</body>
+</html>
+
