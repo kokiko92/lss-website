@@ -1,0 +1,30 @@
+{
+  "name": "Les Loutres du Swimrun Suresnois",
+  "short_name": "LSS",
+  "description": "Association gratuite de swimrun à Suresnes (92150). Rejoignez notre communauté de swimrunners pour des entraînements et des moments conviviaux. Club de swimrun à côté de Paris",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+} 
